@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "homepage": "http://Anlinmac.github.io/my-app",
+  "name": "react-form",
+  "homepage": "http://Anlinmac.github.io/react-form",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
