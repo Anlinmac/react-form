@@ -5,25 +5,26 @@ class Form extends Component {
     constructor(props) {
         super(props)
 
+        // this.setNewValue = this.setNewValue.bind(this);
         this.state = {
-            firstname: ' ',
-            lastname: ' ',
-            email: ' ',
-            city: ' ',
-            state: ' ',
-            zipcode: ' '
+            firstName: '',
+            lastName: '',
+            email: '',
+            city: '',
+            state: '',
+            zipCode: ''
 
         }
     }
     handleFirstnameChange = (event) => {
         this.setState({
-            firstname: event.target.value
+            firstName: event.target.value
         })
     }
 
     handleLastnameChange = (event) => {
         this.setState({
-            lastname: event.target.value
+            lastName: event.target.value
         })
     }
 
@@ -39,47 +40,55 @@ class Form extends Component {
         })
     }
 
-    handleStateChange = (event) => {
+    handleStateChange = (usState) => {
         this.setState({
-            state: event.target.value
+            state: usState
         })
     }
 
+    // setNewValue(newValue) {
+    //     this.setState({
+    //                 usstate: newValue.target.value
+    //             })
+    //     console.log('this is the State code:' + newValue);
+    // }
+
     handleZipcodeChange = (event) => {
         this.setState({
-            zipcode: event.target.value
+            zipCode: event.target.value
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         // alert(`Thank you ` + `${this.state.username}` + ` for submitting`)
-        console.log(`First name ` + `${this.state.firstname}` + `\n` + `Last name ` + ` ${this.state.lastname}` + `\n` + `Email ` + `${this.state.email}` + `\n` + `City ` + `${this.state.city}` + `\n` + `State` + ` ${this.state.state}` + `\n` + `Zipcode ` + `${this.state.zipcode}`)
+        console.log(`First name ` + `${this.state.firstName}` + `\n` + `Last name ` + ` ${this.state.lastName}` + `\n` + `Email ` + `${this.state.email}` + `\n` + `City ` + `${this.state.city}` + `\n` + `State` + ` ${this.state.state}` + `\n` + `Zipcode ` + `${this.state.zipCode}`)
         this.setState({
-            firstname: ' ',
-            lastname: ' ',
-            email: ' ',
-            city: ' ',
-            zipcode: ' '
+            firstName: '',
+            lastName: '',
+            email: '',
+            state: '',
+            city: '',
+            zipCode: ''
         })
     }
 
     render() {
         return (
-            <div className="container">
+            <div className="container w-50">
                 <h2 className="pb-4">Contact us</h2>
                 <form className="mb-4">
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label>First name</label>
                             <input type="text" className="form-control"
-                                value={this.state.firstname}
+                                value={this.state.firstName}
                                 onChange={this.handleFirstnameChange} />
                         </div>
                         <div className="form-group col-md-6">
                             <label>Last name</label>
                             <input type="text" className="form-control"
-                                value={this.state.lastname}
+                                value={this.state.lastName}
                                 onChange={this.handleLastnameChange} />
                         </div>
                     </div>
@@ -90,34 +99,31 @@ class Form extends Component {
                             onChange={this.handleEmailChange} />
                     </div>
                     <div className="form-row">
-                        <div className="form-group col-md-6">
+                        <div className="form-group col-md-5">
                             <label>City</label>
                             <input type="text" className="form-control"
                                 value={this.state.city}
                                 onChange={this.handleCityChange} />
                         </div>
-                        <div className="col-md-3 mb-3">
-                            {/* <label>State</label>
-                            <select className="custom-select" value={this.state.state} SelectUSState id="myId" className="myClassName"  onChange={this.handleStateChange} >
-                                <option value="PA">PA</option>
-                                <option value="NJ">NJ</option>
-                                <option value="NY">NY</option>
-                            </select> */}
+                        <div className="col-md-4 mb-3">
                             <label> State </label>
-                            <SelectUSState id="myId" className="custom-select" onChange={this.handleStateChange} />
+                            <SelectUSState id="myId"
+                                className="custom-select"
+                                value={this.state.usState}
+                                onChange={this.handleStateChange} />
 
                         </div>
-                        <div className="form-group col-md-2">
+                        <div className="form-group col-md-3 ">
                             <label>Zipcode</label>
                             <input type="number" className="form-control"
-                                value={this.state.zipcode}
+                                value={this.state.zipCode}
                                 onChange={this.handleZipcodeChange} />
                         </div>
                     </div>
                     <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                 </form>
 
-            </div>
+            </div >
         )
     }
 }
