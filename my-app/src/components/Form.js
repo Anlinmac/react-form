@@ -3,21 +3,20 @@ import React, { Component } from 'react'
 class Form extends Component {
     constructor(props) {
         super(props)
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
-        this.handleLastnameChange = this.handleLastnameChange.bind(this);
 
         this.state = {
-            username: ' ',
+            firstname: ' ',
             lastname: ' ',
             email: ' ',
             city: ' ',
+            state: 'PA',
             zipcode: ' '
 
         }
     }
-    handleUsernameChange = (event) => {
+    handleFirstnameChange = (event) => {
         this.setState({
-            username: event.target.value
+            firstname: event.target.value
         })
     }
 
@@ -39,6 +38,12 @@ class Form extends Component {
         })
     }
 
+    handleStateChange = (event) => {
+        this.setState({
+            state: event.target.value
+        })
+    }
+
     handleZipcodeChange = (event) => {
         this.setState({
             zipcode: event.target.value
@@ -46,21 +51,29 @@ class Form extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
-       alert (`Thank you `+ `${this.state.username}`+ ` for submitting`)
+        event.preventDefault();
+        // alert(`Thank you ` + `${this.state.username}` + ` for submitting`)
+        console.log(`First name ` + `${this.state.firstname}` + `\n` + `Last name ` + ` ${this.state.lastname}` + `\n` + `Email ` + `${this.state.email}` + `\n` + `City ` + `${this.state.city}` + `\n` + `State` + ` ${this.state.state}` + `\n` + `Zipcode ` + `${this.state.zipcode}`)
+        this.setState({
+            firstname: ' ',
+            lastname: ' ',
+            email: ' ',
+            city: ' ',
+            zipcode: ' '
+        })
     }
 
     render() {
         return (
             <div className="container">
                 <h2 className="pb-4">Contact us</h2>
-                <form onSubmit = {this.handleSubmit}>
+                <form className="mb-4">
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label>First name</label>
                             <input type="text" className="form-control"
-                                value={this.state.username}
-                                onChange={this.handleUsernameChange} />
+                                value={this.state.firstname}
+                                onChange={this.handleFirstnameChange} />
                         </div>
                         <div className="form-group col-md-6">
                             <label>Last name</label>
@@ -79,18 +92,26 @@ class Form extends Component {
                         <div className="form-group col-md-6">
                             <label>City</label>
                             <input type="text" className="form-control"
-                            value={this.state.city}
-                            onChange={this.handleCityChange} />
+                                value={this.state.city}
+                                onChange={this.handleCityChange} />
                         </div>
+                        <div class="col-md-3 mb-3">
+                            <label>State</label>
+                            <select className="custom-select" value={this.state.state} onChange={this.handleStateChange} >
+                                <option value="PA">PA</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NY">NY</option>
+                            </select>
 
-                        <div class="form-group col-md-2">
+                        </div>
+                        <div className="form-group col-md-2">
                             <label>Zipcode</label>
                             <input type="number" className="form-control"
-                            value={this.state.zipcode}
-                            onChange={this.handleZipcodeChange} />
+                                value={this.state.zipcode}
+                                onChange={this.handleZipcodeChange} />
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                 </form>
 
             </div>
