@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-gh-pages/static/js/main.e1511196.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.e1511196.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.c2549955.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.c2549955.js.map",
-    "static/js/2.8e849eab.chunk.js": "/react-gh-pages/static/js/2.8e849eab.chunk.js",
-    "static/js/2.8e849eab.chunk.js.map": "/react-gh-pages/static/js/2.8e849eab.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.eb9c2c9021cd0217abfa0b7c329b2baa.js": "/react-gh-pages/precache-manifest.eb9c2c9021cd0217abfa0b7c329b2baa.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/js/2.8e849eab.chunk.js.LICENSE": "/react-gh-pages/static/js/2.8e849eab.chunk.js.LICENSE"
+    "main.js": "/react-form/static/js/main.63f4ac59.chunk.js",
+    "main.js.map": "/react-form/static/js/main.63f4ac59.chunk.js.map",
+    "runtime-main.js": "/react-form/static/js/runtime-main.1c068344.js",
+    "runtime-main.js.map": "/react-form/static/js/runtime-main.1c068344.js.map",
+    "static/js/2.342e42d4.chunk.js": "/react-form/static/js/2.342e42d4.chunk.js",
+    "static/js/2.342e42d4.chunk.js.map": "/react-form/static/js/2.342e42d4.chunk.js.map",
+    "index.html": "/react-form/index.html",
+    "precache-manifest.2ec8843a5ea59c8d7227e431afe77fe1.js": "/react-form/precache-manifest.2ec8843a5ea59c8d7227e431afe77fe1.js",
+    "service-worker.js": "/react-form/service-worker.js",
+    "static/js/2.342e42d4.chunk.js.LICENSE": "/react-form/static/js/2.342e42d4.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.c2549955.js",
-    "static/js/2.8e849eab.chunk.js",
-    "static/js/main.e1511196.chunk.js"
+    "static/js/runtime-main.1c068344.js",
+    "static/js/2.342e42d4.chunk.js",
+    "static/js/main.63f4ac59.chunk.js"
   ]
 }
