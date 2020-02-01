@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SelectUSState from 'react-select-us-states';
 
 class Form extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Form extends Component {
             lastname: ' ',
             email: ' ',
             city: ' ',
-            state: 'PA',
+            state: ' ',
             zipcode: ' '
 
         }
@@ -95,13 +96,15 @@ class Form extends Component {
                                 value={this.state.city}
                                 onChange={this.handleCityChange} />
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label>State</label>
-                            <select className="custom-select" value={this.state.state} onChange={this.handleStateChange} >
+                        <div className="col-md-3 mb-3">
+                            {/* <label>State</label>
+                            <select className="custom-select" value={this.state.state} SelectUSState id="myId" className="myClassName"  onChange={this.handleStateChange} >
                                 <option value="PA">PA</option>
                                 <option value="NJ">NJ</option>
                                 <option value="NY">NY</option>
-                            </select>
+                            </select> */}
+                            <label> State </label>
+                            <SelectUSState id="myId" className="custom-select" onChange={this.handleStateChange} />
 
                         </div>
                         <div className="form-group col-md-2">
