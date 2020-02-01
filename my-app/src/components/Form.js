@@ -45,12 +45,16 @@ class Form extends Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+       alert (`Thank you `+ `${this.state.username}`+ ` for submitting`)
+    }
 
     render() {
         return (
             <div className="container">
                 <h2 className="pb-4">Contact us</h2>
-                <form>
+                <form onSubmit = {this.handleSubmit}>
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label>First name</label>
