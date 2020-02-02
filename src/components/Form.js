@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import SelectUSState from 'react-select-us-states';
+import 'font-awesome/css/font-awesome.min.css';
+import "./Form.css"
 
 class Form extends Component {
     constructor(props) {
         super(props)
 
-        // this.setNewValue = this.setNewValue.bind(this);
         this.state = {
             firstName: '',
             lastName: '',
@@ -46,13 +47,6 @@ class Form extends Component {
         })
     }
 
-    // setNewValue(newValue) {
-    //     this.setState({
-    //                 usstate: newValue.target.value
-    //             })
-    //     console.log('this is the State code:' + newValue);
-    // }
-
     handleZipcodeChange = (event) => {
         this.setState({
             zipCode: event.target.value
@@ -61,7 +55,7 @@ class Form extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // alert(`Thank you ` + `${this.state.username}` + ` for submitting`)
+        alert(`Thank you ` + `${this.state.firstName}` + ` for submitting`)
         console.log(`First name ` + `${this.state.firstName}` + `\n` + `Last name ` + ` ${this.state.lastName}` + `\n` + `Email ` + `${this.state.email}` + `\n` + `City ` + `${this.state.city}` + `\n` + `State` + ` ${this.state.state}` + `\n` + `Zipcode ` + `${this.state.zipCode}`)
         this.setState({
             firstName: '',
@@ -75,8 +69,8 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="container w-50">
-                <h2 className="pb-4">Contact us</h2>
+            <div className="container w-50 box">
+                <h2 className="py-4 text-center font">Contact us <i class="fa fa-paper-plane"></i></h2>
                 <form className="mb-4">
                     <div className="form-row">
                         <div className="form-group col-md-6">
@@ -120,7 +114,9 @@ class Form extends Component {
                                 onChange={this.handleZipcodeChange} />
                         </div>
                     </div>
+                    <div className="pb-4">
                     <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+                </div>
                 </form>
 
             </div >
