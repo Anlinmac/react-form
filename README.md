@@ -3,5 +3,5 @@
 2. The 'contact us' form should have the following components: ‘First Name’, ‘Last Name’, ‘Email, ‘City’, ‘State’, ‘Zip Code’, and the submit button.
 3. When the ‘Submit’ button is clicked, write the contents of the text fields to the browser's developer console.
 
-## Deploy 
+## Deployment
 [click here to view](https://anlinmac.github.io/react-form/)
