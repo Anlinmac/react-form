@@ -69,8 +69,8 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="container w-50 box">
-                <h2 className="py-4 text-center font">Contact us <i class="fa fa-paper-plane"></i></h2>
+            <div className="container box">
+                <h2 className="py-4 text-center font">Contact us <i className="fa fa-paper-plane"></i></h2>
                 <form className="mb-4">
                     <div className="form-row">
                         <div className="form-group col-md-6">
