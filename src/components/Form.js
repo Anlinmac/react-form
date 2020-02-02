@@ -56,7 +56,7 @@ class Form extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         alert(`Thank you ` + `${this.state.firstName}` + ` for submitting`)
-        console.log(`First name ` + `${this.state.firstName}` + `\n` + `Last name ` + ` ${this.state.lastName}` + `\n` + `Email ` + `${this.state.email}` + `\n` + `City ` + `${this.state.city}` + `\n` + `State` + ` ${this.state.state}` + `\n` + `Zipcode ` + `${this.state.zipCode}`)
+        console.log(`First name: ` + `${this.state.firstName}` + `\n` + `Last name: ` + ` ${this.state.lastName}` + `\n` + `Email: ` + `${this.state.email}` + `\n` + `City: ` + `${this.state.city}` + `\n` + `State:` + ` ${this.state.state}` + `\n` + `Zip Code: ` + `${this.state.zipCode}`)
         this.setState({
             firstName: '',
             lastName: '',
@@ -99,7 +99,7 @@ class Form extends Component {
                                 value={this.state.city}
                                 onChange={this.handleCityChange} />
                         </div>
-                        <div className="col-md-4 mb-3">
+                        <div className="col-md-4 form-group">
                             <label> State </label>
                             <SelectUSState id="myId"
                                 className="custom-select"
@@ -108,13 +108,13 @@ class Form extends Component {
 
                         </div>
                         <div className="form-group col-md-3 ">
-                            <label>Zipcode</label>
+                            <label>Zip Code</label>
                             <input type="number" className="form-control"
                                 value={this.state.zipCode}
                                 onChange={this.handleZipcodeChange} />
                         </div>
                     </div>
-                    <div className="pb-4">
+                    <div>
                     <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                 </div>
                 </form>
