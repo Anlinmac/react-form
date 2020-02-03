@@ -12,39 +12,71 @@ class Form extends Component {
             lastName: '',
             email: '',
             city: '',
-            state: '',
-            zipCode: ''
+            usState: '',
+            zipCode: '',
+            nameError: '',
+            emailError: ''
 
         }
-    }
+    };
 
     handleInput = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
+    };
 
 
-    handleStateChange = (usState) => {
+    handleStateChange = (value) => {
         this.setState({
-            state: usState
+            usState: value
         })
-    }
+    };
 
+    validate = () => {
+        let nameError = '';
+        let emailError = '';
+
+        if (!this.state.firstName) {
+            nameError = "*Name can not be blank";
+        }
+
+        if (!this.state.email.includes('@')) {
+            emailError = '*Please include an "@" in the email address ';
+        }
+
+        if (emailError || nameError) {
+            this.setState({ emailError, nameError });
+            return false;
+        }
+
+        return true;
+    };
 
     handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Thank you ` + `${this.state.firstName}` + ` for submitting`)
-        console.log(`First name: ` + `${this.state.firstName}` + `\n` + `Last name:` + ` ${this.state.lastName}` + `\n` + `Email: ` + `${this.state.email}` + `\n` + `City: ` + `${this.state.city}` + `\n` + `State:` + ` ${this.state.state}` + `\n` + `Zip Code: ` + `${this.state.zipCode}`)
-        this.setState({
-            firstName: '',
-            lastName: '',
-            email: '',
-            state: '',
-            city: '',
-            zipCode: ''
-        })
-    }
+        const isValid = this.validate();
+        // console.log(isValid);
+        // alert(`Thank you ` + this.state.firstName + ` for submitting`) 
+        if (isValid) {
+            console.log(this.state);
+            console.log(`First name: ` + this.state.firstName + '\n Last name: ' + this.state.lastName + `\n Email: ` + this.state.email + `\n City: ` + this.state.city + `\n State: ` + this.state.usState + `\nZip Code: ` + this.state.zipCode)
+            this.setState({
+                firstName: '',
+                lastName: '',
+                email: '',
+                usState: '',
+                city: '',
+                zipCode: '',
+                nameError: '',
+                emailError: ''
+
+            })
+
+        }
+
+
+    };
 
     render() {
         return (
@@ -59,9 +91,11 @@ class Form extends Component {
                                 type="text"
                                 className="form-control"
                                 value={this.state.firstName}
-                                onChange={event => this.handleInput(event)}
-                            />
+                                onChange={event => this.handleInput(event)} />
+                            <div style={{ color: "red" }}>{this.state.nameError}</div>
                         </div>
+
+
                         <div className="form-group col-md-6">
                             <label>Last name</label>
                             <input
@@ -79,8 +113,11 @@ class Form extends Component {
                             type="email"
                             className="form-control"
                             value={this.state.email}
-                            onChange={event => this.handleInput(event)}  />
+                            onChange={event => this.handleInput(event)} />
+                        <div style={{ color: "red" }}>{this.state.emailError}</div>
                     </div>
+
+
                     <div className="form-row">
                         <div className="form-group col-md-5">
                             <label>City</label>
@@ -106,7 +143,7 @@ class Form extends Component {
                                 type="number"
                                 className="form-control"
                                 value={this.state.zipCode}
-                                onChange={event => this.handleInput(event)}  />
+                                onChange={event => this.handleInput(event)} />
                         </div>
                     </div>
                     <div>
